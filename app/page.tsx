@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import dynamic from "next/dynamic";
 import { Hero } from "@/components/home/Hero";
-import { ServicesPreview } from "@/components/home/ServicesPreview";
+import { WhatWeBuildPreview } from "@/components/home/WhatWeBuildPreview";
 import { WhyChooseUs } from "@/components/home/WhyChooseUs";
-import { PortfolioPreview } from "@/components/home/PortfolioPreview";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/utils";
 
-/** Lazy-load below-the-fold sections for better Core Web Vitals */
 const Process = dynamic(() =>
   import("@/components/home/Process").then((m) => m.Process)
 );
@@ -19,27 +17,35 @@ const FinalCTA = dynamic(() =>
 );
 
 export const metadata: Metadata = createMetadata({
-  title: "Custom Software Engineering",
+  title: "Business Transformation & Digital Systems",
   description: siteConfig.description,
   path: "/",
 });
 
-/** JSON-LD Organization structured data for SEO */
 function OrganizationJsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: siteConfig.name,
+    name: siteConfig.legalName,
     url: siteConfig.url,
     email: siteConfig.email,
+    logo: `${siteConfig.url}/brand/icon.png`,
     description: siteConfig.description,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "San Francisco",
-      addressRegion: "CA",
-      addressCountry: "US",
-    },
-    sameAs: [],
+    foundingDate: "2026-07",
+    address: [
+      {
+        "@type": "PostalAddress",
+        addressLocality: "Dubai",
+        addressRegion: "UAE",
+        addressCountry: "AE",
+      },
+      {
+        "@type": "PostalAddress",
+        addressLocality: "Cairo",
+        addressCountry: "EG",
+      },
+    ],
+    sameAs: ["https://linkedin.com/company/easetasks"],
   };
 
   return (
@@ -55,9 +61,8 @@ export default function HomePage() {
     <>
       <OrganizationJsonLd />
       <Hero />
-      <ServicesPreview />
+      <WhatWeBuildPreview />
       <WhyChooseUs />
-      <PortfolioPreview />
       <Process />
       <Testimonials />
       <FinalCTA />

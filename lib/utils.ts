@@ -7,9 +7,13 @@ export function cn(...inputs: ClassValue[]) {
 
 export const siteConfig = {
   name: "Ease Tasks",
+  legalName: "Easetasks Solutions LTD",
+  tagline: "We Ease Your Daily Business Tasks",
   url: "https://easetasks.com",
-  email: "hello@easetasks.com",
-  location: "San Francisco, CA",
+  email: "info@easetasks.com",
+  location: "IFZA, Dubai, UAE",
   description:
-    "We design, develop, and deploy bespoke web applications, custom digital platforms, and robust websites engineered to accelerate your growth.",
+    "Business Transformation & Digital Systems Consultancy. We help organizations redesign the way they operate — using software, automation, and intelligent business systems.",
+  founded: "July 2026",
+  regions: ["UAE", "Egypt", "England"],
 };

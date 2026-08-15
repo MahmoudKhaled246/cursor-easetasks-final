@@ -62,24 +62,35 @@ export function ContactForm() {
         <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-5">
           {/* Full Name */}
           <div>
-            <label htmlFor="fullName" className="mb-1.5 block text-sm text-text-muted">
+            <label
+              htmlFor="fullName"
+              className="mb-1.5 block text-sm text-text-muted"
+            >
               Full Name
             </label>
             <input
               id="fullName"
               type="text"
               {...register("fullName")}
-              className={cn(inputClasses, errors.fullName && "border-red-500/50")}
+              className={cn(
+                inputClasses,
+                errors.fullName && "border-red-500/50",
+              )}
               placeholder="John Doe"
             />
             {errors.fullName && (
-              <p className="mt-1 text-xs text-red-400">{errors.fullName.message}</p>
+              <p className="mt-1 text-xs text-red-400">
+                {errors.fullName.message}
+              </p>
             )}
           </div>
 
           {/* Email */}
           <div>
-            <label htmlFor="email" className="mb-1.5 block text-sm text-text-muted">
+            <label
+              htmlFor="email"
+              className="mb-1.5 block text-sm text-text-muted"
+            >
               Email Address
             </label>
             <input
@@ -90,13 +101,18 @@ export function ContactForm() {
               placeholder="john@company.com"
             />
             {errors.email && (
-              <p className="mt-1 text-xs text-red-400">{errors.email.message}</p>
+              <p className="mt-1 text-xs text-red-400">
+                {errors.email.message}
+              </p>
             )}
           </div>
 
           {/* Company */}
           <div>
-            <label htmlFor="company" className="mb-1.5 block text-sm text-text-muted">
+            <label
+              htmlFor="company"
+              className="mb-1.5 block text-sm text-text-muted"
+            >
               Company (Optional)
             </label>
             <input
@@ -108,69 +124,80 @@ export function ContactForm() {
             />
           </div>
 
-          {/* Project Type */}
-          <div>
-            <label htmlFor="projectType" className="mb-1.5 block text-sm text-text-muted">
-              Project Type
-            </label>
-            <select
-              id="projectType"
-              {...register("projectType")}
-              className={cn(
-                inputClasses,
-                "appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%238C8C8C%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-[length:1.25rem] bg-[right_0.75rem_center] bg-no-repeat",
-                errors.projectType && "border-red-500/50"
-              )}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select type
-              </option>
-              {projectTypes.map((type) => (
-                <option key={type} value={type} className="bg-surface">
-                  {type}
+          <div className="grid grid-cols-2 gap-8">
+            {/* Project Type */}
+            <div>
+              <label
+                htmlFor="projectType"
+                className="mb-1.5 block text-sm text-text-muted"
+              >
+                Project Type
+              </label>
+              <select
+                id="projectType"
+                {...register("projectType")}
+                className={cn(
+                  inputClasses,
+                  errors.projectType && "border-red-500/50",
+                )}
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select type
                 </option>
-              ))}
-            </select>
-            {errors.projectType && (
-              <p className="mt-1 text-xs text-red-400">
-                {errors.projectType.message}
-              </p>
-            )}
-          </div>
+                {projectTypes.map((type) => (
+                  <option key={type} value={type} className="bg-surface">
+                    {type}
+                  </option>
+                ))}
+              </select>
+              {errors.projectType && (
+                <p className="mt-1 text-xs text-red-400">
+                  {errors.projectType.message}
+                </p>
+              )}
+            </div>
 
-          {/* Budget */}
-          <div>
-            <label htmlFor="budget" className="mb-1.5 block text-sm text-text-muted">
-              Estimated Budget
-            </label>
-            <select
-              id="budget"
-              {...register("budget")}
-              className={cn(
-                inputClasses,
-                "appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 fill=%27none%27 viewBox=%270 0 20 20%27%3E%3Cpath stroke=%27%238C8C8C%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%271.5%27 d=%27m6 8 4 4 4-4%27/%3E%3C/svg%3E')] bg-[length:1.25rem] bg-[right_0.75rem_center] bg-no-repeat",
-                errors.budget && "border-red-500/50"
-              )}
-              defaultValue=""
-            >
-              <option value="" disabled>
-                Select budget
-              </option>
-              {budgetRanges.map((range) => (
-                <option key={range} value={range} className="bg-surface">
-                  {range}
+            {/* Budget */}
+            <div>
+              <label
+                htmlFor="budget"
+                className="mb-1.5 block text-sm text-text-muted"
+              >
+                Estimated Budget
+              </label>
+              <select
+                id="budget"
+                {...register("budget")}
+                className={cn(
+                  inputClasses,
+                  errors.budget && "border-red-500/50",
+                )}
+                defaultValue=""
+              >
+                <option value="" disabled>
+                  Select budget
                 </option>
-              ))}
-            </select>
-            {errors.budget && (
-              <p className="mt-1 text-xs text-red-400">{errors.budget.message}</p>
-            )}
+                {budgetRanges.map((range) => (
+                  <option key={range} value={range} className="bg-surface">
+                    {range}
+                  </option>
+                ))}
+              </select>
+              {errors.budget && (
+                <p className="mt-1 text-xs text-red-400">
+                  {errors.budget.message}
+                </p>
+              )}
+            </div>
           </div>
 
           {/* Project Details */}
           <div>
-            <label htmlFor="details" className="mb-1.5 block text-sm text-text-muted">
+            <label
+              htmlFor="details"
+              className="mb-1.5 block text-sm text-text-muted"
+            >
               Project Details
             </label>
             <textarea
@@ -180,12 +207,14 @@ export function ContactForm() {
               className={cn(
                 inputClasses,
                 "resize-none",
-                errors.details && "border-red-500/50"
+                errors.details && "border-red-500/50",
               )}
               placeholder="Tell us about your project..."
             />
             {errors.details && (
-              <p className="mt-1 text-xs text-red-400">{errors.details.message}</p>
+              <p className="mt-1 text-xs text-red-400">
+                {errors.details.message}
+              </p>
             )}
           </div>
 

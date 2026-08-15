@@ -1,20 +1,20 @@
+import Image from "next/image";
 import {
   Globe,
   LayoutGrid,
-  Code2,
-  Palette,
+  Workflow,
+  Building2,
   Check,
   type LucideIcon,
 } from "lucide-react";
 import { Tag } from "@/components/ui/Tag";
-import { ServiceMockup } from "@/components/services/ServiceMockup";
 import { AnimatedSection } from "@/components/ui/AnimatedSection";
 
 const iconMap: Record<string, LucideIcon> = {
   Globe,
   LayoutGrid,
-  Code2,
-  Palette,
+  Workflow,
+  Building2,
 };
 
 interface ServiceDetailProps {
@@ -22,10 +22,13 @@ interface ServiceDetailProps {
     id: string;
     icon: string;
     title: string;
+    subtitle?: string;
     description: string;
+    longDescription?: string;
     tags: readonly string[];
     features: readonly string[];
-    mockup: "website" | "webapp" | "custom" | "design";
+    image: string;
+    closingStatement?: string;
   };
   reversed?: boolean;
 }
@@ -41,16 +44,20 @@ export function ServiceDetail({ service, reversed }: ServiceDetailProps) {
             reversed ? "lg:[direction:rtl]" : ""
           }`}
         >
-          {/* Content */}
           <div className={reversed ? "lg:[direction:ltr]" : ""}>
             <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-lg bg-accent/10">
               <Icon className="h-5 w-5 text-accent" />
             </div>
-            <h2 className="text-2xl font-bold text-text-primary md:text-3xl">
+            {service.subtitle && (
+              <p className="text-xs font-semibold uppercase tracking-wider text-accent">
+                {service.subtitle}
+              </p>
+            )}
+            <h2 className="mt-1 text-2xl font-bold text-text-primary md:text-3xl">
               {service.title}
             </h2>
             <p className="mt-3 text-base leading-relaxed text-text-muted">
-              {service.description}
+              {service.longDescription ?? service.description}
             </p>
             <div className="mt-5 flex flex-wrap gap-2">
               {service.tags.map((tag) => (
@@ -68,11 +75,24 @@ export function ServiceDetail({ service, reversed }: ServiceDetailProps) {
                 </li>
               ))}
             </ul>
+            {service.closingStatement && (
+              <p className="mt-6 border-l-2 border-accent/30 pl-4 text-sm italic text-text-primary/80">
+                {service.closingStatement}
+              </p>
+            )}
           </div>
 
-          {/* Mockup */}
           <div className={reversed ? "lg:[direction:ltr]" : ""}>
-            <ServiceMockup type={service.mockup} />
+            <div className="card-surface relative aspect-[4/3] overflow-hidden">
+              <Image
+                src={service.image}
+                alt={`${service.title} — Ease Tasks service illustration`}
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-surface/40 to-transparent" />
+            </div>
           </div>
         </div>
       </div>

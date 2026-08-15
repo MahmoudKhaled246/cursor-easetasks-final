@@ -1,261 +1,339 @@
 export const navLinks = [
+  { label: "What We Build", href: "/what-we-build", highlight: true },
   { label: "Services", href: "/services" },
-  { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ] as const;
 
 export const heroStats = [
   { value: "99.9%", label: "Uptime SLA" },
-  { value: "35+", label: "Launched Apps" },
-  { value: "4.9/5", label: "Partner Rating" },
+  { value: "4", label: "Global Offices" },
+  { value: "100%", label: "Business First" },
 ] as const;
 
-export const services = [
+/** Four strategic pillars from the Ease Tasks presentation */
+export const pillars = [
   {
-    id: "website-development",
+    id: "digital-presence",
+    number: "01",
     icon: "Globe",
-    title: "Website Development",
+    title: "Digital Presence",
+    subtitle: "The operational face of your business",
     description:
-      "Lightning-fast, SEO-optimized sites built on headless architecture.",
-    tags: ["Headless CMS", "SEO", "Responsive"],
+      "Websites, email infrastructure, and brand platforms — engineered to communicate credibility, enable transactions, and support business development.",
+    longDescription:
+      "Your digital presence is not a marketing asset. It is operational infrastructure that communicates credibility, enables transactions, and supports business development. First impressions are operational decisions.",
+    tags: ["Business Websites", "Email Infrastructure", "Brand Platforms"],
     features: [
-      "Next-gen architecture (Jamstack)",
-      "Sub-second page loads",
-      "Advanced SEO optimization",
-      "Accessible & responsive design",
+      "Business websites architected for performance, conversion, and brand authority",
+      "Professional email infrastructure with SPF, DKIM, and DMARC security",
+      "Virtual business cards and digital-first contact systems",
+      "Corporate identity platforms ensuring consistency across every touchpoint",
     ],
     previewFeatures: [
-      "Next-gen architecture (Jamstack)",
-      "Sub-second page loads",
+      "Performance-optimized business websites",
+      "Enterprise-grade email infrastructure",
     ],
-    mockup: "website" as const,
+    image: "/images/services/digital-presence.png",
+    closingStatement:
+      "We build digital presence that earns trust before the first conversation.",
   },
   {
-    id: "web-applications",
+    id: "business-systems",
+    number: "02",
     icon: "LayoutGrid",
-    title: "Web Applications",
+    title: "Business Systems",
+    subtitle: "The operational core of your organization",
     description:
-      "Complex logic wrapped in simple, intuitive user interfaces.",
-    tags: ["SPAs / PWAs", "React / Vue", "Real-time"],
+      "CRM, ERP, dashboards, internal platforms, and management systems — replacing fragmented tools with unified, intelligent infrastructure.",
+    longDescription:
+      "The operational core of any organization is its internal systems. We design and build custom platforms that replace fragmented tools and manual processes with unified, intelligent infrastructure.",
+    tags: ["Custom CRM", "ERP Systems", "Dashboards"],
     features: [
-      "Single Page Applications (SPAs)",
-      "Progressive Web Apps (PWAs)",
-      "Real-time data synchronization",
-      "Offline-first capabilities",
+      "Custom CRM built around your actual sales process",
+      "ERP systems connecting finance, operations, HR, and procurement",
+      "Company portals for communication, documentation, and workflow",
+      "Real-time reporting dashboards for leadership and department heads",
+      "Purpose-built management systems for project, asset, and compliance",
     ],
     previewFeatures: [
-      "Single Page Applications (SPAs)",
-      "Progressive Web Apps (PWAs)",
+      "Custom CRM & ERP platforms",
+      "Real-time reporting dashboards",
     ],
-    mockup: "webapp" as const,
+    image: "/images/services/business-systems.png",
+    closingStatement:
+      "When your systems are aligned, your organization operates with clarity and speed.",
   },
   {
-    id: "custom-software",
-    icon: "Code2",
-    title: "Custom Software",
+    id: "automation",
+    number: "03",
+    icon: "Workflow",
+    title: "Automation",
+    subtitle: "The operational engine of growth",
     description:
-      "Bespoke tools and platforms engineered exactly for your business logic.",
-    tags: ["85% Faster", "Scalable", "Secure"],
+      "Workflow, email, AI-powered, and process automation — eliminating manual inefficiency and freeing teams to do work that matters.",
+    longDescription:
+      "Manual processes are the single largest source of operational inefficiency in growing organizations. We eliminate them — systematically. Automation is not about replacing people. It is about freeing them to do work that matters.",
+    tags: ["Workflow Automation", "AI-Powered", "Process Automation"],
     features: [
-      "Automated workflows",
-      "Third-party API integrations",
-      "Legacy system modernization",
-      "Enterprise-grade security",
+      "Workflow automation across multi-step business processes",
+      "Intelligent, trigger-based email communication systems",
+      "End-to-end business process automation — approvals, reporting, data entry",
+      "AI-powered systems that learn from operational data",
+      "Structured approval workflows replacing email chains",
+      "Notification and task automation ensuring the right information at the right time",
     ],
     previewFeatures: [
-      "Automated workflows",
-      "Third-party API integrations",
+      "Workflow & process automation",
+      "AI-powered intelligent systems",
     ],
-    mockup: "custom" as const,
+    image: "/images/services/automation.png",
+    closingStatement:
+      "We eliminate manual inefficiency — systematically and at scale.",
   },
   {
-    id: "ui-ux-design",
-    icon: "Palette",
-    title: "UI/UX Design",
-    description: "Pixel-perfect, conversion-focused design systems.",
-    tags: ["Design Tokens", "Figma", "Prototyping"],
+    id: "enterprise-platforms",
+    number: "04",
+    icon: "Building2",
+    title: "Enterprise Platforms",
+    subtitle: "The operational backbone at scale",
+    description:
+      "Zoho, API integrations, and custom enterprise solutions — architected, implemented, and integrated to operate reliably and securely.",
+    longDescription:
+      "For organizations requiring enterprise-grade infrastructure, we architect, implement, and integrate platforms that operate at scale — reliably and securely. Enterprise complexity requires enterprise thinking.",
+    tags: ["Zoho Solutions", "API Integration", "Custom Platforms"],
     features: [
-      "Comprehensive design systems",
-      "Interactive prototyping",
-      "User journey mapping",
-      "Conversion rate optimization",
+      "Full-suite Zoho implementation: CRM, Books, People, Projects, Desk",
+      "Enterprise integrations connecting ERP, CRM, HRMS, and finance",
+      "Custom API development and third-party integration",
+      "Bespoke enterprise applications for complex operational requirements",
     ],
     previewFeatures: [
-      "Comprehensive design systems",
-      "Interactive prototyping",
+      "Zoho & enterprise platform implementation",
+      "Custom API integrations",
     ],
-    mockup: "design" as const,
+    image: "/images/services/enterprise-platforms.png",
+    closingStatement:
+      "We are technology-agnostic. Platform selection is always driven by business requirements.",
+  },
+] as const;
+
+/** Legacy alias for services page */
+export const services = pillars;
+
+export const whatWeAreNot = [
+  {
+    title: "Not a software house.",
+    description: "We do not sell code. We engineer operational systems.",
+  },
+  {
+    title: "Not a digital agency.",
+    description:
+      "We do not run campaigns. We redesign how businesses function.",
+  },
+  {
+    title: "Consulting first.",
+    description:
+      "Every engagement begins with understanding the business — before a single line of code is written.",
+  },
+] as const;
+
+export const philosophyCards = [
+  {
+    title: "Business First",
+    description:
+      "Every engagement begins with operational discovery — not a product demo. We diagnose before we prescribe.",
+  },
+  {
+    title: "Technology Second",
+    description:
+      "Software is selected or built only after the business requirement is fully understood.",
+  },
+  {
+    title: "Elegant Simplicity",
+    description:
+      "The best system is simple enough to be used consistently and powerful enough to scale.",
+  },
+  {
+    title: "Security by Design",
+    description:
+      "Every system is architected with data protection and access control from the first line of design.",
+  },
+  {
+    title: "Long-term Partnership",
+    description:
+      "We measure success not at launch — but at the 12-month operational mark.",
+  },
+  {
+    title: "Appropriate Solutions",
+    description:
+      "We do not over-engineer. We do not under-deliver. We match the solution to the actual need.",
   },
 ] as const;
 
 export const whyChooseUs = {
   highlights: [
-    { value: "100%", label: "Type-safe production codebase" },
-    { value: "2.5x", label: "Faster delivery cycles" },
+    { value: "6", label: "Core principles we never compromise" },
+    { value: "3", label: "Countries — UAE, Egypt, England" },
   ],
   items: [
     {
-      icon: "Zap",
-      title: "Fast & Predictable Delivery",
+      icon: "Search",
+      title: "Business Understanding First",
       description:
-        "Iterative sprints mean you see progress weekly, not monthly.",
+        "We diagnose before we prescribe. Every engagement begins with operational discovery.",
+    },
+    {
+      icon: "Brain",
+      title: "Consulting Mindset",
+      description:
+        "We think like business advisors, not developers. Recommendations driven by operational outcomes.",
+    },
+    {
+      icon: "Sparkles",
+      title: "Elegant, Appropriate Systems",
+      description:
+        "We build what is needed — nothing more, nothing less. Complexity is never a feature.",
     },
     {
       icon: "Shield",
-      title: "Scalable Type-Safe Code",
+      title: "Security by Design",
       description:
-        "We build with strict typing so your app doesn't break at scale.",
+        "Data protection and access control are architectural decisions, not afterthoughts.",
     },
     {
-      icon: "Headphones",
-      title: "Dedicated Support",
+      icon: "TrendingUp",
+      title: "Scalable Architecture",
       description:
-        "Direct access to the engineers building your product.",
+        "Every system is designed to grow with the organization — without requiring a rebuild.",
     },
     {
-      icon: "Layers",
-      title: "Modern Tech Stack",
+      icon: "Handshake",
+      title: "Long-term Partnership",
       description:
-        "React, Next.js, Node, Rust — tools that modern tech giants use.",
+        "We measure success by operational performance — not by project closure.",
     },
   ],
 } as const;
 
-export const projects = [
+export const transformationFramework = [
   {
-    id: "aether-store",
-    badge: "SAAS PLATFORM",
-    status: "Online",
-    statusIcon: "check",
-    title: "Aether Store",
+    number: "01",
+    title: "Discover",
     description:
-      "A headless e-commerce engine designed for high-volume modern retailers.",
-    tags: ["E-Commerce", "Next.js", "Stripe"],
-    gradient: "from-emerald-900/40 to-teal-900/20",
-    accentColor: "#10b981",
+      "We map your business logic, operational workflows, technical requirements, and user needs.",
   },
   {
-    id: "apex-metrics",
-    badge: "WEB APPLICATION",
-    status: "Realtime",
-    statusIcon: "check",
-    title: "Apex Metrics",
+    number: "02",
+    title: "Design",
     description:
-      "Real-time analytics dashboard rendering complex datasets with zero lag.",
-    tags: ["Analytics Dashboard", "React", "WebGL"],
-    gradient: "from-blue-900/40 to-indigo-900/20",
-    accentColor: "#3b82f6",
+      "We architect the system and design solutions aligned with your operational reality.",
   },
   {
-    id: "velo-pay",
-    badge: "FINTECH APP",
-    status: "Encrypted",
-    statusIcon: "check",
-    title: "Velo Pay",
+    number: "03",
+    title: "Deliver",
     description:
-      "Secure, instant global payments platform with bank-grade encryption.",
-    tags: ["Mobile Banking", "Fintech", "Rust"],
-    gradient: "from-purple-900/40 to-violet-900/20",
-    accentColor: "#8b5cf6",
+      "We build, deploy, and hand over — with structured training and full documentation.",
   },
 ] as const;
 
 export const processSteps = [
   {
     number: "01",
-    title: "Discover",
+    title: "Discovery Call",
     description:
-      "We map your business logic, technical requirements, and user needs.",
+      "We listen first. Understand the business, the challenge, and the goal.",
   },
   {
     number: "02",
-    title: "Design",
+    title: "Operational Assessment",
     description:
-      "We architect the system and design pixel-perfect interfaces.",
+      "We map your current workflows, systems, and gaps before proposing anything.",
   },
   {
     number: "03",
-    title: "Develop",
+    title: "Solution Proposal",
     description:
-      "We write clean, typed, scalable code in iterative sprints.",
+      "A structured, consulting-grade proposal — not a generic quote.",
   },
   {
     number: "04",
-    title: "Deliver",
+    title: "Delivery & Review",
     description:
-      "We deploy to production, monitor performance, and hand over the keys.",
+      "Regular sprint reviews, transparent progress reporting, and client sign-off at every milestone.",
+  },
+] as const;
+
+export const industries = [
+  "Defense & Government",
+  "Real Estate",
+  "Healthcare",
+  "Startups & Scaleups",
+  "Enterprise Organizations",
+  "Professional Services",
+  "E-Commerce & Retail",
+  "Marketing Agencies",
+] as const;
+
+export const offices = [
+  {
+    name: "Headquarters",
+    location: "IFZA, Dubai, United Arab Emirates",
+    type: "HQ",
+  },
+  {
+    name: "Cairo Office",
+    location: "Cairo, Egypt — Operational Delivery",
+    type: "Operations",
+  },
+  {
+    name: "England Office",
+    location: "England, United Kingdom — Marketing & Sales",
+    type: "Sales",
+  },
+] as const;
+
+export const teamMembers = [
+  {
+    initials: "Dabo",
+    name: "Abdel-fattah",
+    role: "Founder & CEO",
+    bio: "Business transformation strategist focused on engineering operational systems that scale. Leading Easetasks Solutions LTD from IFZA, UAE.",
+    image: "/images/team/ceo.png",
+    isCEO: true,
   },
 ] as const;
 
 export const testimonials = [
   {
     quote:
-      "Ease Tasks delivered our platform 3 months ahead of schedule. The code quality is unmatched.",
-    initials: "SJ",
-    name: "Sarah Jenkins",
-    role: "CTO, NexaFlow",
+      "Easetasks didn't just build software — they redesigned how our entire operation functions. The ROI was visible within 90 days.",
+    initials: "AK",
+    name: "Ahmed Khalil",
+    role: "Operations Director, Gulf Logistics",
   },
   {
     quote:
-      "They didn't just build what we asked for, they engineered a better solution than we imagined.",
-    initials: "DC",
-    name: "David Chen",
-    role: "Founder, Horizon Retail",
+      "Finally a partner that understands the business before writing a single line of code. Their consulting approach is genuinely different.",
+    initials: "SM",
+    name: "Sarah Mitchell",
+    role: "Managing Partner, Horizon Consulting",
   },
   {
     quote:
-      "The fastest, most reliable engineering team we have ever partnered with. A truly premium experience.",
-    initials: "ER",
-    name: "Elena Rostova",
-    role: "Product Lead, VeloPay",
-  },
-] as const;
-
-export const philosophyCards = [
-  {
-    title: "Quality Over Volume",
-    description:
-      "We take on fewer projects to ensure every line of code meets our obsessive standards for performance and maintainability.",
-  },
-  {
-    title: "Modern Architecture",
-    description:
-      "We leverage edge computing, strictly typed languages, and modern frameworks to build systems that load instantly.",
-  },
-  {
-    title: "Engineered for Scale",
-    description:
-      "We design database schemas and infrastructure topologies that handle millions of requests without breaking a sweat.",
-  },
-] as const;
-
-export const teamMembers = [
-  {
-    initials: "AM",
-    name: "Alex Mercer",
-    role: "Founder & Chief Architect",
-    bio: "Ex-Stripe engineer focused on high-availability distributed systems.",
-  },
-  {
-    initials: "ER",
-    name: "Elena Rostova",
-    role: "Head of UI/UX",
-    bio: "Award-winning designer obsessed with micro-interactions and accessibility.",
-  },
-  {
-    initials: "MV",
-    name: "Marcus Vance",
-    role: "Lead Systems Engineer",
-    bio: "TypeScript and Rust specialist. Dreams in abstract syntax trees.",
+      "From Zoho implementation to custom automation — they delivered a unified system that replaced six disconnected tools.",
+    initials: "RA",
+    name: "Rashid Al-Mansouri",
+    role: "CEO, Nexus Properties",
   },
 ] as const;
 
 export const projectTypes = [
-  "Web Application",
-  "Marketing Website",
-  "Custom Software",
-  "UI/UX Design",
+  "Digital Presence",
+  "Business Systems",
+  "Automation",
+  "Enterprise Platforms",
+  "Digital Transformation",
   "Other",
 ] as const;
 

@@ -29,7 +29,7 @@ export function Navbar() {
                     ? "text-accent"
                     : "highlight" in link && link.highlight
                       ? "text-accent/80 hover:text-accent"
-                      : "text-text-muted hover:text-text-primary"
+                      : "text-text-muted hover:text-text-primary",
                 )}
               >
                 {link.label}
@@ -71,7 +71,7 @@ export function Navbar() {
                       ? "bg-accent/10 text-accent"
                       : "highlight" in link && link.highlight
                         ? "text-accent/80 hover:bg-accent/5"
-                        : "text-text-muted hover:bg-white/5 hover:text-text-primary"
+                        : "text-text-muted hover:bg-white/5 hover:text-text-primary",
                   )}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -80,10 +80,22 @@ export function Navbar() {
               </li>
             ))}
             <li className="mt-4 flex flex-col gap-2 px-4">
-              <Button href="/contact" variant="outline" size="md" className="w-full">
+              <Button
+                href="/contact"
+                variant="outline"
+                size="md"
+                className="w-full"
+                onClick={() => setMobileOpen(false)}
+              >
                 Get a Free Quote
               </Button>
-              <Button href="/contact" variant="primary" size="md" className="w-full">
+              <Button
+                href="/contact"
+                variant="primary"
+                size="md"
+                className="w-full"
+                onClick={() => setMobileOpen(false)}
+              >
                 Start Your Project
               </Button>
             </li>

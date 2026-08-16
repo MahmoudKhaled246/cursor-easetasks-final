@@ -213,48 +213,48 @@ export function OfficesSection() {
   );
 }
 
-export function TeamSection() {
-  return (
-    <AnimatedSection className="section-padding">
-      <div className="container-main">
-        <SectionLabel centered>Leadership</SectionLabel>
-        <h2 className="text-center text-3xl font-bold text-text-primary md:text-4xl">
-          Meet the team.
-        </h2>
+// export function TeamSection() {
+//   return (
+//     <AnimatedSection className="section-padding">
+//       <div className="container-main">
+//         <SectionLabel centered>Leadership</SectionLabel>
+//         <h2 className="text-center text-3xl font-bold text-text-primary md:text-4xl">
+//           Meet the team.
+//         </h2>
 
-        <div className="mx-auto mt-12 max-w-md">
-          {teamMembers.map((member, idx) => (
-            <AnimatedCard
-              key={member.name}
-              delay={idx * 0.1}
-              className="card-surface overflow-hidden"
-            >
-              <div className="relative h-72 w-full">
-                <Image
-                  src={member.image}
-                  alt={`${member.name} — ${member.role}`}
-                  fill
-                  className="object-cover object-top"
-                  sizes="(max-width: 768px) 100vw, 400px"
-                  priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
-              </div>
-              <div className="p-6 text-center">
-                <h3 className="text-xl font-semibold text-text-primary">
-                  {member.name}
-                </h3>
-                <p className="mt-1 text-sm font-medium text-accent">
-                  {member.role}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-text-muted">
-                  {member.bio}
-                </p>
-              </div>
-            </AnimatedCard>
-          ))}
-        </div>
-      </div>
-    </AnimatedSection>
-  );
-}
+//         <div className="mx-auto mt-12 max-w-md">
+//           {teamMembers.map((member, idx) => (
+//             <AnimatedCard
+//               key={member.name}
+//               delay={idx * 0.1}
+//               className="card-surface overflow-hidden"
+//             >
+//               <div className="relative h-72 w-full">
+//                 <Image
+//                   src={member.image}
+//                   alt={`${member.name} — ${member.role}`}
+//                   fill
+//                   className="object-cover object-top"
+//                   sizes="(max-width: 768px) 100vw, 400px"
+//                   priority
+//                 />
+//                 <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent" />
+//               </div>
+//               <div className="p-6 text-center">
+//                 <h3 className="text-xl font-semibold text-text-primary">
+//                   {member.name}
+//                 </h3>
+//                 <p className="mt-1 text-sm font-medium text-accent">
+//                   {member.role}
+//                 </p>
+//                 <p className="mt-3 text-sm leading-relaxed text-text-muted">
+//                   {member.bio}
+//                 </p>
+//               </div>
+//             </AnimatedCard>
+//           ))}
+//         </div>
+//       </div>
+//     </AnimatedSection>
+//   );
+// }

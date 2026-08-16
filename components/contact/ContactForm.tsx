@@ -43,7 +43,7 @@ export function ContactForm() {
   };
 
   const inputClasses =
-    "w-full rounded-btn border border-white/10 bg-background px-4 py-3 text-sm text-text-primary placeholder:text-text-muted/60 transition-colors focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/30";
+    "w-full rounded-btn border border-white/10 bg-background px-4 py-3 text-sm text-text-primary placeholder:text-text-muted/60  transition-colors focus:border-accent/50 focus:outline-none focus:ring-1 focus:ring-accent/30";
 
   return (
     <div className="card-surface p-6 md:p-8">
@@ -59,7 +59,7 @@ export function ContactForm() {
           </p>
         </div>
       ) : (
-        <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-5">
+        <form onSubmit={handleSubmit(onSubmit)} className="mt-6 space-y-5 ">
           {/* Full Name */}
           <div>
             <label
@@ -79,7 +79,7 @@ export function ContactForm() {
               placeholder="John Doe"
             />
             {errors.fullName && (
-              <p className="mt-1 text-xs text-red-400">
+              <p className="mt-1 text-xs text-red-400 ">
                 {errors.fullName.message}
               </p>
             )}
@@ -124,41 +124,40 @@ export function ContactForm() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-8">
-            {/* Project Type */}
-            <div>
-              <label
-                htmlFor="projectType"
-                className="mb-1.5 block text-sm text-text-muted"
-              >
-                Project Type
-              </label>
-              <select
-                id="projectType"
-                {...register("projectType")}
-                className={cn(
-                  inputClasses,
-                  errors.projectType && "border-red-500/50",
-                )}
-                defaultValue=""
-              >
-                <option value="" disabled>
-                  Select type
-                </option>
-                {projectTypes.map((type) => (
-                  <option key={type} value={type} className="bg-surface">
-                    {type}
-                  </option>
-                ))}
-              </select>
-              {errors.projectType && (
-                <p className="mt-1 text-xs text-red-400">
-                  {errors.projectType.message}
-                </p>
+          {/* Project Type */}
+          <div>
+            <label
+              htmlFor="projectType"
+              className="mb-1.5 block text-sm text-text-muted"
+            >
+              Project Type
+            </label>
+            <select
+              id="projectType"
+              {...register("projectType")}
+              className={cn(
+                inputClasses,
+                errors.projectType && "border-red-500/50",
               )}
-            </div>
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select type
+              </option>
+              {projectTypes.map((type) => (
+                <option key={type} value={type} className="bg-surface">
+                  {type}
+                </option>
+              ))}
+            </select>
+            {errors.projectType && (
+              <p className="mt-1 text-xs text-red-400">
+                {errors.projectType.message}
+              </p>
+            )}
+          </div>
 
-            {/* Budget */}
+          {/* Budget
             <div>
               <label
                 htmlFor="budget"
@@ -189,8 +188,7 @@ export function ContactForm() {
                   {errors.budget.message}
                 </p>
               )}
-            </div>
-          </div>
+            </div> */}
 
           {/* Project Details */}
           <div>

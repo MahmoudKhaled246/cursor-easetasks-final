@@ -7,7 +7,7 @@ import {
   PhilosophySection,
   StatsRow,
   OfficesSection,
-  TeamSection,
+  // TeamSection,
 } from "@/components/about/AboutSections";
 import { createMetadata } from "@/lib/metadata";
 import { siteConfig } from "@/lib/utils";
@@ -28,7 +28,7 @@ export default function AboutPage() {
       <PhilosophySection />
       <StatsRow />
       <OfficesSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
     </>
   );
 }

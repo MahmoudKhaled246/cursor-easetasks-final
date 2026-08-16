@@ -4,7 +4,11 @@ import { cn } from "@/lib/utils";
 type ButtonVariant = "primary" | "secondary" | "outline" | "ghost";
 type ButtonSize = "sm" | "md" | "lg";
 
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface ButtonProps extends Omit<
+  React.ButtonHTMLAttributes<HTMLButtonElement>,
+  "onClick"
+> {
+  onClick?: () => void;
   variant?: ButtonVariant;
   size?: ButtonSize;
   href?: string;
@@ -35,18 +39,19 @@ export function Button({
   href,
   children,
   className,
+  onClick,
   ...props
 }: ButtonProps) {
   const classes = cn(
     "inline-flex items-center justify-center font-medium whitespace-nowrap",
     variants[variant],
     sizes[size],
-    className
+    className,
   );
 
   if (href) {
     return (
-      <Link href={href} className={classes}>
+      <Link href={href} className={classes} onClick={onClick}>
         {children}
       </Link>
     );
